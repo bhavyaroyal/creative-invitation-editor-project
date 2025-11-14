@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Invitation</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="canvasScroll">
+    <div id="card1" class="card">
+        <div class="text-box" id="defaultText" style="left:50px; top:50px; font-size:22px;" contenteditable="true">
+            Your Invitation Text Here
+            <div class="resize-handle"></div>
+        </div>
+    </div>
+
+    <div class="card"></div>
+    <div class="card"></div>
+</div>
+
+<div id="toolbar">
+    <button id="addTextBtn">➕ Add Text</button>
+    <button id="addImageBtn">🖼 Add Image</button>
+
+    <label>Font Size</label>
+    <input type="range" id="fontSize" min="10" max="80" value="22">
+
+    <label>Font Family</label>
+    <select id="fontFamily">
+        <option value="Arial">Arial</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Times New Roman">Times</option>
+        <option value="Courier New">Courier</option>
+    </select>
+
+    <label>Text Color</label>
+    <input type="color" id="textColor" value="#000000">
+
+    <button id="boldBtn">Bold</button>
+    <button id="italicBtn">Italic</button>
+    <button id="underlineBtn">Underline</button>
+
+    <label>Alignment</label>
+    <select id="alignSelect">
+        <option value="left">Left</option>
+        <option value="center">Center</option>
+        <option value="right">Right</option>
+    </select>
+
+    <label>Letter Spacing</label>
+    <input type="range" id="letterSpacing" min="0" max="10" value="0">
+
+    <label>Line Height</label>
+    <input type="range" id="lineHeight" min="1" max="3" step="0.1" value="1">
+
+    <label>Opacity</label>
+    <input type="range" id="opacityRange" min="0.1" max="1" step="0.1" value="1">
+
+    <button id="deleteBtn" style="background:#ff4444;color:white;">🗑 Delete</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
