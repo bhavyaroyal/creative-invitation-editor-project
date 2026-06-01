@@ -1,65 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Invitation</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Creative Invitation Editor</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- html2canvas for Download -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
+
 <body>
 
-<div id="canvasScroll">
-    <div id="card1" class="card">
-        <div class="text-box" id="defaultText" style="left:50px; top:50px; font-size:22px;" contenteditable="true">
-            Your Invitation Text Here
-            <div class="resize-handle"></div>
+    <!-- Toolbar -->
+    <div id="toolbar">
+
+        <h2>🎨 Invitation Editor</h2>
+
+        <button id="addTextBtn">
+            <i class="fa-solid fa-plus"></i> Add Text
+        </button>
+
+        <button id="addImageBtn">
+            <i class="fa-solid fa-image"></i> Add Image
+        </button>
+
+        <button id="downloadBtn">
+            <i class="fa-solid fa-download"></i> Download PNG
+        </button>
+
+        <hr>
+
+        <!-- Template -->
+        <label>Template</label>
+        <select id="templateSelect">
+            <option value="birthday">Birthday</option>
+            <option value="wedding">Wedding</option>
+            <option value="engagement">Engagement</option>
+            <option value="babyshower">Baby Shower</option>
+        </select>
+
+        <!-- Font Size -->
+        <label>Font Size</label>
+        <input type="range" id="fontSize" min="10" max="80" value="22">
+
+        <!-- Font -->
+        <label>Font Family</label>
+        <select id="fontFamily">
+            <option value="Arial">Arial</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Times New Roman">Times</option>
+            <option value="Courier New">Courier</option>
+            <option value="Verdana">Verdana</option>
+        </select>
+
+        <!-- Text Color -->
+        <label>Text Color</label>
+        <input type="color" id="textColor" value="#000000">
+
+        <!-- Formatting -->
+        <div class="format-buttons">
+            <button id="boldBtn"><b>B</b></button>
+            <button id="italicBtn"><i>I</i></button>
+            <button id="underlineBtn"><u>U</u></button>
         </div>
+
+        <!-- Alignment -->
+        <label>Alignment</label>
+        <select id="alignSelect">
+            <option value="left">Left</option>
+            <option value="center">Center</option>
+            <option value="right">Right</option>
+        </select>
+
+        <!-- Letter Spacing -->
+        <label>Letter Spacing</label>
+        <input type="range" id="letterSpacing" min="0" max="10" value="0">
+
+        <!-- Line Height -->
+        <label>Line Height</label>
+        <input type="range" id="lineHeight" min="1" max="3" step="0.1" value="1.2">
+
+        <!-- Opacity -->
+        <label>Opacity</label>
+        <input type="range" id="opacityRange" min="0.1" max="1" step="0.1" value="1">
+
+        <!-- Delete -->
+        <button id="deleteBtn" class="delete-btn">
+            🗑 Delete Selected
+        </button>
+
     </div>
 
-    <div class="card"></div>
-    <div class="card"></div>
-</div>
+    <!-- Canvas -->
+    <div id="canvasContainer">
 
-<div id="toolbar">
-    <button id="addTextBtn">➕ Add Text</button>
-    <button id="addImageBtn">🖼 Add Image</button>
+        <div id="card" class="card birthday">
 
-    <label>Font Size</label>
-    <input type="range" id="fontSize" min="10" max="80" value="22">
+            <div class="text-box selected"
+                contenteditable="true"
+                style="left:50px; top:50px; font-size:24px;">
+                Your Invitation Text Here
+                <div class="resize-handle"></div>
+            </div>
 
-    <label>Font Family</label>
-    <select id="fontFamily">
-        <option value="Arial">Arial</option>
-        <option value="Georgia">Georgia</option>
-        <option value="Times New Roman">Times</option>
-        <option value="Courier New">Courier</option>
-    </select>
+        </div>
 
-    <label>Text Color</label>
-    <input type="color" id="textColor" value="#000000">
+    </div>
 
-    <button id="boldBtn">Bold</button>
-    <button id="italicBtn">Italic</button>
-    <button id="underlineBtn">Underline</button>
+    <script src="script.js"></script>
 
-    <label>Alignment</label>
-    <select id="alignSelect">
-        <option value="left">Left</option>
-        <option value="center">Center</option>
-        <option value="right">Right</option>
-    </select>
-
-    <label>Letter Spacing</label>
-    <input type="range" id="letterSpacing" min="0" max="10" value="0">
-
-    <label>Line Height</label>
-    <input type="range" id="lineHeight" min="1" max="3" step="0.1" value="1">
-
-    <label>Opacity</label>
-    <input type="range" id="opacityRange" min="0.1" max="1" step="0.1" value="1">
-
-    <button id="deleteBtn" style="background:#ff4444;color:white;">🗑 Delete</button>
-</div>
-
-<script src="script.js"></script>
 </body>
 </html>
+```
